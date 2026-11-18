@@ -1,0 +1,29 @@
+{
+  "random_state": 42,
+  "test_size": 0.2,
+  "features": [
+    "Type",
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]",
+    "Temp_diff",
+    "Power"
+  ],
+  "target": "Machine failure",
+  "failure_modes": [
+    "TWF",
+    "HDF",
+    "PWF",
+    "OSF",
+    "RNF"
+  ],
+  "health_score_definition": "100 * (1 - predicted probability of Machine failure)",
+  "health_thresholds_demo_only": {
+    "Critical": "score < 50",
+    "Warning": "50 <= score < 80",
+    "Healthy": "score >= 80"
+  },
+  "best_model_by_test_pr_auc": "Gradient Boosting"
+}
